@@ -1,0 +1,59 @@
+/*
+ * Odessa State environmental University
+ * Copyright (C) 2014
+ */
+
+package ua.edu.odeku.ceem.mapRadar.tools
+
+import java.awt.event.{WindowAdapter, WindowEvent}
+import java.awt.{BorderLayout, Dimension}
+import javax.swing.JFrame
+
+/**
+ * Общее окно для всех Tool компонентов программы
+ *
+ * User: Aleo Bakalov
+ * Date: 10.12.13
+ * Time: 16:28
+ */
+class ToolFrame(val ceemRadarTool: CeemRadarTool) extends JFrame() {
+
+	def this(toolName: String){
+		this(Class.forName(toolName).newInstance().asInstanceOf[CeemRadarTool])
+	}
+
+	ceemRadarTool.setParent(this)
+
+	protected val startFunction: (ToolFrame) => Unit = ceemRadarTool.startFunction
+	protected val endFunction: (ToolFrame) => Unit = ceemRadarTool.endFunction
+
+	this.setTitle(this.ceemRadarTool.name)
+
+	this.setLocationByPlatform(true)
+
+	initToolFrameSettings()
+
+	protected def initToolFrameSettings() {
+		//		this.setAlwaysOnTop(true)
+		this.setLayout(new BorderLayout)
+		this.add(ceemRadarTool.rootPanel, BorderLayout.CENTER)
+		this.pack()
+		this.setMinimumSize(new Dimension(this.getWidth, this.getHeight))
+		if (startFunction != null) {
+			startFunction.apply(this)
+		}
+	}
+
+	this.addWindowListener(new WindowAdapter {
+		override def windowClosing(e: WindowEvent) {
+			if (endFunction != null) {
+				endFunction.apply(ToolFrame.this)
+			}
+		}
+
+		override def windowOpened(e: WindowEvent){
+			ceemRadarTool.init()
+		}
+	})
+
+}
