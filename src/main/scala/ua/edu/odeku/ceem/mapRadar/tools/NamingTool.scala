@@ -20,8 +20,8 @@ trait NamingTool {
 
   def name: String = {
     val locale = Settings.Program.locale
-    if (ResourceBundle.getBundle("tools", locale).containsKey(nameTool)) {
-      ResourceBundle.getBundle("tools", locale).getString(nameTool)
+    if (ResourceBundle.getBundle("bundles/tools", locale).containsKey(nameTool)) {
+      ResourceBundle.getBundle("bundles/tools", locale).getString(nameTool)
     } else {
       nameTool
     }

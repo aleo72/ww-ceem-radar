@@ -28,7 +28,7 @@ public class FileChooserForm {
     private String fileName;
     private File file;
     private JFileChooser fileChooser = new JFileChooser();
-    private ResourceBundle resourceBundle = ResourceBundle.getBundle("strings", Settings.Program$.MODULE$.locale());
+    private ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles/strings", Settings.Program$.MODULE$.locale());
 
     {
         fileChooser.setFileFilter(new FileFilter() {

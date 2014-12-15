@@ -15,6 +15,7 @@ import gov.nasa.worldwind.Configuration
 import ua.edu.odeku.ceem.mapRadar.db.DB
 import ua.edu.odeku.ceem.mapRadar.panels.ImagePanel
 import ua.edu.odeku.ceem.mapRadar.settings.Settings
+import ua.edu.odeku.ceem.mapRadar.utils.CeemUtilsFunctions.URIFromResource
 
 /**
  * Объект старта программы
@@ -23,6 +24,9 @@ import ua.edu.odeku.ceem.mapRadar.settings.Settings
  * Created by Aleo on 01.02.14.
  */
 object CeemRadarApplication extends App {
+
+	if(!Settings.file.exists()) Settings.file.createNewFile()
+
 
   Application.initLocale()
 	Application.initSystemProperty()
@@ -99,7 +103,7 @@ private object Application {
 		// Файл с настройками путей сохранения Cache
 		Configuration.setValue(
 			"gov.nasa.worldwind.avkey.DataFileStoreConfigurationFileName",
-			"ua/edu/odeku/ceem/mapRadar/config/DataFileStore.xml"
+			"DataFileStore.xml"
 		)
 
 	}
@@ -131,7 +135,7 @@ private object Application {
 
 				override def run(): Unit = {
 					try {
-            val image = ImageIO.read(new File(Settings.Program.Start.fileStartWindow))
+            val image = ImageIO.read(new File(URIFromResource(Settings.Program.Start.fileStartWindow)))
 						val panel = new ImagePanel(image)
 
 						startWindow.add(panel)

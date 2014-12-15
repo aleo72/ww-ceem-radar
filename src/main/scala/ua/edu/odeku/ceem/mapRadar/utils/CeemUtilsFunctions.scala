@@ -5,6 +5,8 @@
 
 package ua.edu.odeku.ceem.mapRadar.utils
 
+import ua.edu.odeku.ceem.mapRadar.CeemRadar
+
 import scala.collection.mutable.ArrayBuffer
 
 /**
@@ -44,5 +46,6 @@ object CeemUtilsFunctions {
     buf.toArray
   }
 
+  def URIFromResource(fileName: String) = classOf[CeemRadar].getClassLoader.getResource(fileName).toURI
 
 }

@@ -9,6 +9,7 @@ import java.io.File
 import java.util.Locale
 
 import ua.com.serious_panda.settings.Property
+import ua.edu.odeku.ceem.mapRadar.utils.CeemUtilsFunctions.URIFromResource
 
 /**
  * Обїект який маніпулює конфігурацієй
@@ -17,7 +18,7 @@ import ua.com.serious_panda.settings.Property
  */
 object Settings {
 
-  implicit val file = new File("CeemRadarDataConfigs/program.properties")
+  implicit val file = new File(URIFromResource("program.properties"))
   val nameResourceBundle = "label_properties"
 
   object Program {

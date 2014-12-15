@@ -9,7 +9,7 @@
     <colspec value="left:4dlu:noGrow"/>
     <colspec value="fill:429px:grow"/>
     <constraints>
-      <xy x="20" y="20" width="441" height="117"/>
+      <xy x="20" y="20" width="441" height="139"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -25,13 +25,13 @@
           <component id="6a67d" class="javax.swing.JButton" binding="importButton">
             <constraints/>
             <properties>
-              <text resource-bundle="strings_uk_UA" key="button_geoName_import"/>
+              <text resource-bundle="bundles/strings" key="button_geoName_import"/>
             </properties>
           </component>
           <component id="50211" class="javax.swing.JButton" binding="cancelButton" default-binding="true">
             <constraints/>
             <properties>
-              <text resource-bundle="strings_uk_UA" key="button_cancel"/>
+              <text resource-bundle="bundles/strings" key="button_cancel"/>
             </properties>
           </component>
         </children>

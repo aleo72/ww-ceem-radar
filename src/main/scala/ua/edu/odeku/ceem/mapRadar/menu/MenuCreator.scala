@@ -17,7 +17,7 @@ import ua.edu.odeku.ceem.mapRadar.settings.Settings
   * *********************************************************************************************************************/
 trait MenuCreator {
 
-  val resourceBundle = ResourceBundle.getBundle("menu", Settings.Program.locale)
+  val resourceBundle = ResourceBundle.getBundle("bundles/menu", Settings.Program.locale)
 
   def nameMenu: String
 
