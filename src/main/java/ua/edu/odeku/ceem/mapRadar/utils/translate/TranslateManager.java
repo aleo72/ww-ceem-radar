@@ -10,7 +10,7 @@ import java.util.Locale;
  */
 public final class TranslateManager {
 
-    private static final HashMap<String, Translatable> localeTranslate = new HashMap<>();
+    private static final HashMap<String, Translatable> localeTranslate = new HashMap<String, Translatable>();
 
     static {
         localeTranslate.put("UA", new UA());
