@@ -6,7 +6,7 @@
 package ua.edu.odeku.ceem.mapRadar.menu
 
 import javax.swing.{JMenu, JCheckBoxMenuItem, KeyStroke, JMenuItem}
-import ua.edu.odeku.ceem.mapRadar.tools.radar.surface.SurfaceDistributionPowerDensityManager
+import ua.edu.odeku.ceem.mapRadar.tools.radar.surface.SurfaceManager
 
 import scala.collection.mutable.ArrayBuffer
 import java.awt.event.{ActionEvent, ActionListener, InputEvent}
@@ -70,7 +70,7 @@ object MenuRadar extends MenuCreator {
         override def actionPerformed(e: ActionEvent): Unit = {
           val item = e.getSource.asInstanceOf[JCheckBoxMenuItem]
           val state = item.getState
-          AirspaceEntry.showViewMode(SurfaceDistributionPowerDensityManager.SHOW_TYPE_ISOLINE, if (state) alt else 0)
+          AirspaceEntry.showViewMode(SurfaceManager.SHOW_TYPE_ISOLINE, if (state) alt else 0)
           menuItems.foreach(_.setState(false))
           item.setState(state)
         }
@@ -96,7 +96,7 @@ object MenuRadar extends MenuCreator {
         override def actionPerformed(e: ActionEvent): Unit = {
           val item = e.getSource.asInstanceOf[JCheckBoxMenuItem]
           val state = item.getState
-          AirspaceEntry.showViewMode(SurfaceDistributionPowerDensityManager.SHOW_TYPE_2D, if (state) alt else 0)
+          AirspaceEntry.showViewMode(SurfaceManager.SHOW_TYPE_2D, if (state) alt else 0)
           menuItems.foreach(_.setState(false))
           item.setState(state)
         }
@@ -122,7 +122,7 @@ object MenuRadar extends MenuCreator {
         override def actionPerformed(e: ActionEvent): Unit = {
           val item = e.getSource.asInstanceOf[JCheckBoxMenuItem]
           val state = item.getState
-          AirspaceEntry.showViewMode(SurfaceDistributionPowerDensityManager.SHOW_TYPE_3D, if (state) alt else 0)
+          AirspaceEntry.showViewMode(SurfaceManager.SHOW_TYPE_3D, if (state) alt else 0)
           menuItems.foreach(_.setState(false))
           item.setState(state)
         }

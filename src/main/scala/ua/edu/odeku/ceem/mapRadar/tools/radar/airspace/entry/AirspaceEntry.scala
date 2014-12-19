@@ -14,7 +14,7 @@ import ua.edu.odeku.ceem.mapRadar.tools.radar.airspace._
 import ua.edu.odeku.ceem.mapRadar.tools.radar.airspace.factories.CeemRadarAirspaceFactory
 import ua.edu.odeku.ceem.mapRadar.tools.radar.dialogs.CreateEditRadarFrame
 import ua.edu.odeku.ceem.mapRadar.tools.radar.models.Radar
-import ua.edu.odeku.ceem.mapRadar.tools.radar.surface.SurfaceDistributionPowerDensityManager
+import ua.edu.odeku.ceem.mapRadar.tools.radar.surface.SurfaceManager
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -155,7 +155,7 @@ object AirspaceEntry {
           entry.editor.setEnabled(false)
         }
       )
-      SurfaceDistributionPowerDensityManager.show(viewModeType, altitute, bufferOfAirspaceEntry.map(entry => entry.radar).toArray)
+			SurfaceManager.show(viewModeType, altitute, bufferOfAirspaceEntry.map(entry => entry.radar))
     } else {
       bufferOfAirspaceEntry.foreach(
         (entry: AirspaceEntry) => {
@@ -163,7 +163,7 @@ object AirspaceEntry {
           entry.editor.setEnabled(true)
         }
       )
-      SurfaceDistributionPowerDensityManager.hiden()
+			SurfaceManager.hiden()
     }
   }
 
