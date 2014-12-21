@@ -20,7 +20,7 @@ class GeoNamesTableModel extends AbstractTableModel {
 
 	private var _list: List[GeoName] = null
 
-  val resourceBundle: ResourceBundle = ResourceBundle.getBundle("strings", Settings.Program.locale)
+  val resourceBundle: ResourceBundle = ResourceBundle.getBundle("bundles/strings", Settings.Program.locale)
 
 	def list = _list
 

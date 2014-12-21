@@ -69,7 +69,7 @@ trait CeemTableObject {
 
   val tableName: String
 
-  val resourceBundle: ResourceBundle = ResourceBundle.getBundle("strings", Settings.Program.locale)
+  val resourceBundle: ResourceBundle = ResourceBundle.getBundle("bundles/strings", Settings.Program.locale)
 
 	def createIfNotExists(existsTables: List[MTable], db: H2Driver.backend.DatabaseDef = DB.database): Unit
 

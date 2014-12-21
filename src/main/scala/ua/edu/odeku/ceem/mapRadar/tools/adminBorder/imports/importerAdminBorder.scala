@@ -97,7 +97,7 @@ private class ChooserFileButtonListener(val importer: ImporterAdminBorder, val t
 	fileChooser.setCurrentDirectory(new File("resources/"))
 
 	override def actionPerformed(e: ActionEvent): Unit = {
-		val res = fileChooser.showDialog(importer.tool.form.rootPanel().asInstanceOf[Component], ResourceBundle.getBundle("frameTitle").getString("importAdminBorder_dialog_fileChooser_title"))
+		val res = fileChooser.showDialog(importer.tool.form.rootPanel().asInstanceOf[Component], ResourceBundle.getBundle("bundles/frameTitle").getString("importAdminBorder_dialog_fileChooser_title"))
 		if (res == JFileChooser.APPROVE_OPTION) {
 			file = fileChooser.getSelectedFile
 			textFieldButton.setText(file.getAbsolutePath)
