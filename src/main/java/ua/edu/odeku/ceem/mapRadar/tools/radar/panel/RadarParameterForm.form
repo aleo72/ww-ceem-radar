@@ -29,7 +29,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_name"/>
+              <text resource-bundle="bundles/label" key="airspace_name"/>
             </properties>
           </component>
           <component id="1d87f" class="javax.swing.JTextField" binding="nameTextField">
@@ -79,7 +79,7 @@
             </constraints>
             <properties>
               <labelFor value="cc58"/>
-              <text resource-bundle="label" key="airspace_altitude"/>
+              <text resource-bundle="bundles/label" key="airspace_altitude"/>
             </properties>
           </component>
           <component id="cce4d" class="javax.swing.JSpinner" binding="altitudeSpinner">
@@ -87,7 +87,9 @@
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="bc759" class="javax.swing.JLabel">
             <constraints>
@@ -95,7 +97,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_durationPulse"/>
+              <text resource-bundle="bundles/label" key="airspace_durationPulse"/>
             </properties>
           </component>
           <component id="cc58" class="javax.swing.JSpinner" binding="durationPulseSpinner">
@@ -103,7 +105,9 @@
               <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="ef4ec" class="javax.swing.JLabel">
             <constraints>
@@ -111,7 +115,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_wavelength"/>
+              <text resource-bundle="bundles/label" key="airspace_wavelength"/>
             </properties>
           </component>
           <component id="22986" class="javax.swing.JLabel">
@@ -120,7 +124,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_antennaDiameter"/>
+              <text resource-bundle="bundles/label" key="airspace_antennaDiameter"/>
             </properties>
           </component>
           <component id="772d1" class="javax.swing.JLabel">
@@ -129,7 +133,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_pulsePower"/>
+              <text resource-bundle="bundles/label" key="airspace_pulsePower"/>
             </properties>
           </component>
           <component id="8ee8" class="javax.swing.JSpinner" binding="waveLengthSpinner">
@@ -137,21 +141,27 @@
               <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="e81d9" class="javax.swing.JSpinner" binding="antennaDiameterSpinner">
             <constraints>
               <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="7855e" class="javax.swing.JSpinner" binding="pulsePowerSpinner">
             <constraints>
               <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="16d12" class="javax.swing.JLabel">
             <constraints>
@@ -159,7 +169,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_reflectivityMeteoGoals"/>
+              <text resource-bundle="bundles/label" key="airspace_reflectivityMeteoGoals"/>
             </properties>
           </component>
           <component id="7094d" class="javax.swing.JLabel">
@@ -168,7 +178,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_attenuation"/>
+              <text resource-bundle="bundles/label" key="airspace_attenuation"/>
             </properties>
           </component>
           <component id="fe3d6" class="javax.swing.JLabel">
@@ -177,7 +187,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_radius"/>
+              <text resource-bundle="bundles/label" key="airspace_radius"/>
             </properties>
           </component>
           <component id="52eb1" class="javax.swing.JLabel">
@@ -186,7 +196,7 @@
               <forms/>
             </constraints>
             <properties>
-              <text resource-bundle="label" key="airspace_grainFactor"/>
+              <text resource-bundle="bundles/label" key="airspace_grainFactor"/>
             </properties>
           </component>
           <component id="45c28" class="javax.swing.JSpinner" binding="reflectivityMeteoGoalsSpinner">
@@ -194,28 +204,36 @@
               <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="31707" class="javax.swing.JSpinner" binding="attenuationSpinner">
             <constraints>
               <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="1a5c9" class="javax.swing.JSpinner" binding="radiusSpinner">
             <constraints>
               <grid row="15" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
           <component id="b6479" class="javax.swing.JSpinner" binding="grainFactorSpinner">
             <constraints>
               <grid row="17" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <maximumSize width="400" height="400"/>
+            </properties>
           </component>
         </children>
       </grid>

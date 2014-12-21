@@ -85,7 +85,7 @@ class AirspaceBuilderModel extends AbstractTableModel {
 
 object AirspaceBuilderModel {
 
-  val resourceBundle: ResourceBundle = ResourceBundle.getBundle("strings", Settings.Program.locale)
+  val resourceBundle: ResourceBundle = ResourceBundle.getBundle("bundles/strings", Settings.Program.locale)
 
 	val columnName: Array[String] = Array(
     resourceBundle.getString("table_airspace_name"),

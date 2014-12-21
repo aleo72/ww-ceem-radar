@@ -5,7 +5,8 @@
 
 package ua.edu.odeku.ceem.mapRadar.tools.radar.panel.handlerForm
 
-import javax.swing.SpinnerNumberModel
+import java.awt.Dimension
+import javax.swing.{JSpinner, SpinnerNumberModel}
 
 import ua.edu.odeku.ceem.mapRadar.settings.Settings
 import ua.edu.odeku.ceem.mapRadar.tools.radar.models.Radar
@@ -23,22 +24,35 @@ class HandlerRadarParameterForm(val form: RadarParameterForm) {
 
     implicit def AnyValToAnyRef(v: AnyVal) = v.asInstanceOf[AnyRef]
 
+    val spinners = Array(form.altitudeSpinner,
+      form.pulsePowerSpinner,
+      form.waveLengthSpinner,
+      form.antennaDiameterSpinner,
+      form.reflectivityMeteoGoalsSpinner,
+      form.attenuationSpinner,
+      form.radiusSpinner,
+      form.grainFactorSpinner,
+      form.durationPulseSpinner
+    )
+
     form.altitudeSpinner.setModel(new SpinnerNumberModel(
       Settings.Program.Tools.Radar.defaultAltitude,
       Settings.Program.Tools.Radar.minAltitude,
       Settings.Program.Tools.Radar.maxAltitude,
       Settings.Program.Tools.Radar.stepAltitude)
     )
-    form.pulsePowerSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.pulsePower,-1000,1000,0.5) )
-    form.waveLengthSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.pulsePower, -1000.0, 1000, 0.5))
-    form.antennaDiameterSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.antennaDiameter, 0.1, 1000, 0.1))
-    form.reflectivityMeteoGoalsSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.reflectivityMeteoGoals, -1000, 1000, 0.5))
-    form.attenuationSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.attenuation, -1000.0, 1000.0, 0.5))
+    form.pulsePowerSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.pulsePower, Double.MinValue, Double.MaxValue, 0.5))
+    form.waveLengthSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.pulsePower, Double.MinValue, Double.MaxValue, 0.5))
+    form.antennaDiameterSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.antennaDiameter, 0.001, 10000, 0.1))
+    form.reflectivityMeteoGoalsSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.reflectivityMeteoGoals, Double.MinValue, Double.MaxValue, 0.5))
+    form.attenuationSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.attenuation, Double.MinValue, Double.MaxValue, 0.5))
     form.radiusSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.radius, 1.0, 10000000.0, 100))
-    form.grainFactorSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.grainFactor, 1.0, 1000000, 100))
+    form.grainFactorSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.grainFactor, Double.MinValue, Double.MaxValue, 100))
     form.grainFactorSpinner.setValue(Settings.Program.Tools.Radar.grainFactor)
-    form.durationPulseSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.durationPulse, -10000.0, 100000, 10))
+    form.durationPulseSpinner.setModel(new SpinnerNumberModel(Settings.Program.Tools.Radar.durationPulse, Double.MinValue, Double.MaxValue, 10))
     form.durationPulseSpinner.setValue(Settings.Program.Tools.Radar.durationPulse)
+
+    spinners.foreach( spinner=> spinner.getEditor.asInstanceOf[JSpinner.DefaultEditor].getTextField.setColumns(25))
 
   }
 
