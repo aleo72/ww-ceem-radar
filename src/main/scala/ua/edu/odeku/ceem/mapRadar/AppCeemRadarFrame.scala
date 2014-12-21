@@ -16,11 +16,9 @@ import gov.nasa.worldwind.exception.WWAbsentRequirementException
 import gov.nasa.worldwind.layers.{ViewControlsLayer, ViewControlsSelectListener, WorldMapLayer}
 import gov.nasa.worldwind.util.{StatusBar, WWUtil}
 import gov.nasa.worldwind.{Model, WorldWind}
-import gov.nasa.worldwindx.examples.ClickAndGoSelectListener
 import ua.edu.odeku.ceem.mapRadar.menu.ProgramBar
 import ua.edu.odeku.ceem.mapRadar.settings.Settings
 import ua.edu.odeku.ceem.mapRadar.utils.gui.VisibleUtils
-import ua.edu.odeku.ceem.mapRadar.utils.{HighlightController, ToolTipController}
 
 import scala.collection.mutable
 

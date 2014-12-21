@@ -15,8 +15,7 @@ import gov.nasa.worldwind.layers.AnnotationLayer;
 import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.util.Logging;
 import gov.nasa.worldwind.util.WWUtil;
-import gov.nasa.worldwindx.examples.ApplicationTemplate;
-import gov.nasa.worldwindx.examples.util.ToolTipAnnotation;
+import ua.edu.odeku.ceem.mapRadar.utils.gui.VisibleUtils;
 
 /**
  * ********************************************************************************************************************
@@ -184,7 +183,7 @@ public class ToolTipController implements SelectListener, Disposable
     protected void addLayer(Layer layer)
     {
         if (!this.wwd.getModel().getLayers().contains(layer))
-            ApplicationTemplate.insertBeforeCompass(this.wwd, layer);
+            VisibleUtils.insertBeforeCompass(this.wwd, layer);
     }
 
     protected void removeLayer(Layer layer)

@@ -16,7 +16,6 @@ import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.retrieve.BulkRetrievable;
 import gov.nasa.worldwind.retrieve.BulkRetrievalThread;
 import gov.nasa.worldwind.terrain.CompoundElevationModel;
-import gov.nasa.worldwindx.examples.util.SectorSelector;
 import ua.edu.odeku.ceem.mapRadar.settings.Settings;
 
 import javax.swing.*;
