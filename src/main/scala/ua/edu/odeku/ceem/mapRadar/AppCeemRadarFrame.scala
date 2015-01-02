@@ -37,7 +37,7 @@ object AppCeemRadarFrame extends JFrame {
 
   val wwjPanel = new AppMainPanel(canvasSize, DefaultValue.createStaticPanel)
 
-  def wwd = wwjPanel.wwd
+  def wwd: WorldWindowGLCanvas = wwjPanel.wwd
 
   val toolsComponents = new mutable.HashMap[String, JFrame]()
 

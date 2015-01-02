@@ -40,7 +40,7 @@ object SurfaceManager {
     setName("DistributionPowerDensityManager layer")
   }
 
-  def hiden() {
+  def hiden() : Unit =  {
     renderableLayer.removeAllRenderables()
     AppCeemRadarFrame.wwd.getModel.getLayers.remove(renderableLayer)
     AppCeemRadarFrame.wwd.redraw()
