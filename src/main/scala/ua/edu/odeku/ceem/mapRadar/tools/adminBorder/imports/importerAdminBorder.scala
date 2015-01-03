@@ -52,6 +52,7 @@ class ImporterAdminBorder(val tool: ImportAdminBorderTool) {
 				importer.stopProcess = true
 				viewStopImport()
 			}
+			tool.endFunction(tool.parentToolFrame)
 		}
 	})
 
