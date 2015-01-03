@@ -216,18 +216,11 @@ object GeoNames extends CeemTableObject {
     val sqlSimple = if (whereConditions.size > 0) sqlSelect + " AND " + whereConditions.mkString(" AND ") else sqlSelect
 
     val sql = if (subName) {
-      val sqlUnionA = new ArrayBuffer[String]
-      for (column <- Array(nameColumn, asiiColumn, translateNameColumn)) {
-        sqlUnionA += s"$column like '%$subName%''"
-      }
-      s"$sqlSimple AND (${sqlUnionA.mkString(" OR ")}"
+      val sqlUnionA = for (column <- Array(nameColumn, asiiColumn, translateNameColumn)) yield s" $column like '%$subName%' "
+      s" $sqlSimple AND ( ${sqlUnionA.mkString(" OR ")} ) "
     } else sqlSimple
 
-    DB.database withSession {
-      implicit session =>
-
-        Q.queryNA[GeoName](sql).list
-    }
+    DB.database withSession { implicit session => Q.queryNA[GeoName](sql).list }
   }
 
   /**
