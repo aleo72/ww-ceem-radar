@@ -35,11 +35,11 @@ case class Radar(var durationPulse: Double,
                  private var _name: Option[String] = None,
                  var gainFactor: Double = GAIN_FACTOR_DEFAULT) {
 
-  def name = _name.getOrElse(s"Radar ${Radar.radarCounter}")
+  def name: String = _name.getOrElse(s"Radar ${Radar.radarCounter}")
 
   def name_=(value: String): Unit = _name = Some(value)
 
-  def power(length: Double, elevation: Double) = {
+  def power(length: Double, elevation: Double): Double = {
     val value = (pulsePower * sq(gainFactor) * sq(wavelength) * Radar.lightVelocity * durationPulse * sq(antennaDiameter)) /
         (Math.pow(4, 5) * sq(Math.PI) * Math.log(2)) * (reflectivityMeteoGoals / sq(length) * Math.pow(10, (-0.2 * attenuation(length))))
 
@@ -50,7 +50,7 @@ case class Radar(var durationPulse: Double,
     }
   }
 
-  def attenuation(length: Double) = attenuationFactor * length
+  def attenuation(length: Double): Double = attenuationFactor * length
 
   private def sq(value: Double) = value * value
 
@@ -62,12 +62,12 @@ object Radar {
   /**
    * Скорость света
    */
-  val lightVelocity = 299792458
+  val lightVelocity: Int = 299792458
 
-  val OpacityValuePower = -987654321D
-  val minPower = 0.00000001
+  val OpacityValuePower: Double = -987654321D
+  val minPower: Double = 0.00000001
 
-  def EMPTY_RADAR = Radar(0, 0, 0, 0, 0, 0, 0, 0)
+  def EMPTY_RADAR: Radar = Radar(0, 0, 0, 0, 0, 0, 0, 0)
 
   private def radarCounter: Long = Settings.Program.Tools.Radar.counterRadar
 

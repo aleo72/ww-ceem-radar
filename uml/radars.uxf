@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>40</y>
+      <w>380</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Radar
+--
++durationPulse: Double
++wavelength: Double
++antennaDiameter: Double
++pulsePower: Double
++reflectivityMeteoGoals: Double
++attenuationFactor: Double
++radius: Double
++altitude: Double
++latLon: LatLon = LatLon.ZERO
+-_name: Option[String] = None
++gainFactor: Double = GAIN_FACTOR_DEFAULT
+--
++name: String
++name_=(value: String): Unit
++power(length: Double, elevation: Double): Double
++attenuation(length: Double): Double
++radiusOnElevation(elevation: Double): Double
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>360</y>
+      <w>410</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>_object: Radar_
+--
++ lightVelocity: Int = 299792458
++ OpacityValuePower: Double = -987654321D
++ minPower: Double = 0.00000001
+--
++ EMPTY_RADAR: Radar
++ radarCounter: Long
++ radiusOnElevation(radius: Double, elevation: Double) : Double
++ radiusOnElevation(radar: Radar, elevation: Double): Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>10</x>
+      <y>10</y>
+      <w>430</w>
+      <h>510</h>
+    </coordinates>
+    <panel_attributes>ua.edu.odeku.ceem.mapRadar.tools.radar.models
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>750</x>
+      <y>20</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Worldwind
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
