@@ -6,6 +6,7 @@
 package ua.edu.odeku.ceem.mapRadar.tools.radar.airspace.entry
 
 import gov.nasa.worldwind.avlist.AVKey
+import gov.nasa.worldwind.geom.LatLon
 import gov.nasa.worldwind.layers.AirspaceLayer
 import gov.nasa.worldwind.render.airspaces.AirspaceAttributes
 import gov.nasa.worldwind.render.airspaces.editor.{AirspaceEditListener, AirspaceEditor}
@@ -39,7 +40,7 @@ class AirspaceEntry(val factory: CeemRadarAirspaceFactory) extends WWObjectImpl 
 
 	AirspaceEntry.bufferOfAirspaceEntry += this
 
-	def radar = _radar
+	def radar: Radar = _radar
 
 	def radar_=(value: Radar): Unit = {
 		_radar = value
@@ -50,30 +51,30 @@ class AirspaceEntry(val factory: CeemRadarAirspaceFactory) extends WWObjectImpl 
 		}
 	}
 
-	def location = airspace.location
+	def location: LatLon = airspace.location
 
-	def nameAirspaceEntry = _nameAirspaceEntry
+	def nameAirspaceEntry: String = _nameAirspaceEntry
 
 	def nameAirspaceEntry_=(value: String): Unit = {
 		_nameAirspaceEntry = value
 		airspace.setValue(AVKey.DISPLAY_NAME, value)
 	}
 
-	def editing = _editing
+	def editing: Boolean = _editing
 
 	def editing_=(value: Boolean): Unit = {
 		this._editing = value
 		this.updateAttributes()
 	}
 
-	def selected = _selected
+	def selected: Boolean = _selected
 
 	def selected_=(value: Boolean): Unit = {
 		this._selected = value
 		this.updateAttributes()
 	}
 
-	def intersecting = _intersecting
+	def intersecting: Boolean = _intersecting
 
 	def intersecting_=(value: Boolean): Unit = {
 		this._intersecting = value
@@ -84,7 +85,7 @@ class AirspaceEntry(val factory: CeemRadarAirspaceFactory) extends WWObjectImpl 
 
 	def name_=(value: String): Unit = this.setValue(AVKey.DISPLAY_NAME, value)
 
-	private def updateAttributes() {
+	private def updateAttributes(): Unit =  {
 		if (this.selected && this.intersecting) {
 			this.airspace ! AirspaceMessage.selectAndIntersecting
 		}
@@ -99,7 +100,7 @@ class AirspaceEntry(val factory: CeemRadarAirspaceFactory) extends WWObjectImpl 
 		}
 	}
 
-	override def toString = this.name
+	override def toString: String = this.name
 
 	override def getValue(key: String): AnyRef = {
 		val value = super.getValue(key)
@@ -119,7 +120,7 @@ class AirspaceEntry(val factory: CeemRadarAirspaceFactory) extends WWObjectImpl 
 
 	def removeEditListener(listener: AirspaceEditListener): Unit = editor.removeEditListener(listener)
 
-	def removeAirspaceFromAirspaceLayer(layer: AirspaceLayer) = {
+	def removeAirspaceFromAirspaceLayer(layer: AirspaceLayer): Unit = {
 		layer.removeAirspace(airspace.radarAirspace)
 		layer.removeAirspace(airspace.isolineAirspace)
 	}
@@ -131,16 +132,14 @@ class AirspaceEntry(val factory: CeemRadarAirspaceFactory) extends WWObjectImpl 
 		layer.addAirspace(airspace.isolineAirspace)
 	}
 
-	def setArmedForAirspaceEditor(b: Boolean) = editor.setArmed(b)
+	def setArmedForAirspaceEditor(b: Boolean): Unit = editor.setArmed(b)
 
 	def remove(): Unit = AirspaceEntry.bufferOfAirspaceEntry -= this
 }
 
 object AirspaceEntry {
 
-  private var numberNewAirspaceEntry = 1
-
-	val bufferOfAirspaceEntry = new ArrayBuffer[AirspaceEntry]()
+	val bufferOfAirspaceEntry: ArrayBuffer[AirspaceEntry] = new ArrayBuffer[AirspaceEntry]()
 
   /**
    * Переменная указывающая на то, на какой выстоте необходимо отображать изолинию
@@ -167,7 +166,7 @@ object AirspaceEntry {
     }
   }
 
-	def create(wwd: WorldWindow, methodOfController: AirspaceEntry => Unit) {
+	def create(wwd: WorldWindow, methodOfController: AirspaceEntry => Unit): Unit = {
 		apply(wwd, methodOfController)
 	}
 
@@ -177,7 +176,7 @@ object AirspaceEntry {
 	 * @param methodOfController метод из котроллера, которому необходимо предать объект AirspaceEntry,
 	 *                           для того что бы он был зарегестрирован AirspaceController
 	 */
-	def apply(wwd: WorldWindow, methodOfController: AirspaceEntry => Unit) {
+	def apply(wwd: WorldWindow, methodOfController: AirspaceEntry => Unit): Unit =  {
 		/*
 		Алгоритм действий:
 		1) Создаем диалог (фрейм)
@@ -191,7 +190,7 @@ object AirspaceEntry {
 		frame.setVisible(true)
 	}
 
-	def edit(entry: AirspaceEntry, wwd: WorldWindow, methodOfController: AirspaceEntry => Unit) {
+	def edit(entry: AirspaceEntry, wwd: WorldWindow, methodOfController: AirspaceEntry => Unit): Unit = {
 		val frame = new CreateEditRadarFrame(EditAirspaceEntryMessage(entry, wwd, methodOfController))
 		frame.setVisible(true)
 	}

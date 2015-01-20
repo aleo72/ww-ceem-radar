@@ -28,9 +28,9 @@ import scala.collection.mutable.ArrayBuffer
  */
 class CeemRadarAirspace(val radar: Radar, val radarAirspace: RadarAirspace, val editorRadarAirspace: AirspaceEditor, val isolineAirspace: IsolineAirspace, val editorIsolineAirspace: AirspaceEditor) extends Airspace {
 
-  private val airspaces = Array(radarAirspace, isolineAirspace)
+  private val airspaces: Array[AbstractAirspace with LocationAirspace with RadiusAirspace] = Array(radarAirspace, isolineAirspace)
 
-  val editor = new CeemRadarAirspaceEditor(this)
+  val editor: CeemRadarAirspaceEditor = new CeemRadarAirspaceEditor(this)
 
   CeemRadarAirspace.listOfCeemRadarAirspace += this
 
@@ -50,7 +50,7 @@ class CeemRadarAirspace(val radar: Radar, val radarAirspace: RadarAirspace, val 
   }
 
   @BeanProperty
-  def radius = radarAirspace.radiusAirspace
+  def radius: Double = radarAirspace.radiusAirspace
 
   @BeanProperty
   def radius_=(d: Double): Unit = {

@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
+      <x>10</x>
       <y>40</y>
       <w>380</w>
       <h>310</h>
@@ -36,7 +36,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
+      <x>10</x>
       <y>360</y>
       <w>410</w>
       <h>150</h>
@@ -56,7 +56,7 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>10</x>
+      <x>0</x>
       <y>10</y>
       <w>430</w>
       <h>510</h>
@@ -69,14 +69,169 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>750</x>
-      <y>20</y>
-      <w>140</w>
-      <h>70</h>
+      <x>480</x>
+      <y>50</y>
+      <w>250</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>Worldwind
 --
 bg=orange</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>820</x>
+      <y>260</y>
+      <w>970</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>ua.edu.odeku.ceem.mapRadar.tools.radar.airspace.entry
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>290</y>
+      <w>440</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>AirspaceEntry
+--
++ factory: CeemRadarAirspaceFactory
++ airspace: CeemRadarAirspace
++ editor: AirspaceEditor
+- _nameAirspaceEntry: String
++ attributes: AirspaceAttributes
+- _editing: Boolean
+- _selected: Boolean
+- _radar: Radar
+- _intersecting: Boolean
+--
++ radar: Radar
++ radar_=(value: Radar): Unit
++ location: LatLon
++ nameAirspaceEntry: String
++ nameAirspaceEntry_=(value: String): Unit
++ editing: Boolean
++ editing_=(value: Boolean): Unit
++ selected: Boolean
++ selected_=(value: Boolean): Unit
++ intersecting: Boolean
++ intersecting_=(value: Boolean): Unit
++ name: String
++ name_=(value: String): Unit
+- updateAttributes(): Unit
++ toString: String
++ getValue(key: String): AnyRef
++ setValue(key: String, value: AnyRef): AnyRef
++ addAirspaceEditorListener(listener: AirspaceEditListener): Unit
++ removeEditListener(listener: AirspaceEditListener): Unit
++ removeAirspaceFromAirspaceLayer(layer: AirspaceLayer): Unit
++ addEditListener(controller: AirspaceController): Unit
++ addAirspaceToAirspaceLayer(layer: AirspaceLayer): Unit
++ setArmedForAirspaceEditor(b: Boolean): Unit
++ remove(): Unit
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>80</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>WWObjectImpl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1280</x>
+      <y>290</y>
+      <w>490</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>_object: AirspaceEntry_
+--
++ bufferOfAirspaceEntry: ArrayBuffer[AirspaceEntry]
++ altitudeIsolineView: Int = 0
+--
++ showViewMode(viewModeType: String,altitute: Int): Unit
++ create(wwd: WorldWindow, methodOfController: AirspaceEntry =&gt; Unit): Unit
++ apply(wwd: WorldWindow, methodOfController: AirspaceEntry =&gt; Unit): Unit
++ edit(entry: AirspaceEntry, wwd: WorldWindow, methodOfController: AirspaceEntry =&gt; Unit): Unit</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>70</x>
+      <y>530</y>
+      <w>520</w>
+      <h>610</h>
+    </coordinates>
+    <panel_attributes>ua.edu.odeku.ceem.mapRadar.tools.radar.airspace
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>560</y>
+      <w>500</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>RadarAirspace
+--
++ radar: Radar
++ radarAirspace: RadarAirspace
++ editorRadarAirspace: AirspaceEditor
++ isolineAirspace: IsolineAirspace
++ editorIsolineAirspace: AirspaceEditor
+- airspaces: Array[AbstractAirspace with LocationAirspace with RadiusAirspace]
++ editor: CeemRadarAirspaceEditor
+--
++ location: LatLon
++ location_=(latLon: LatLon): Unit
++ radius: Double
++ radius_=(d: Double): Unit
++ visibleAirspace: Airspace
++ showRadarAirspace(flag: Boolean)
++ showIsolineAirspace(altitudeIsolineView: Int = 0)
++ updateIsolineAirspace(altitudeIsolineView: Int): Unit
++ remove(): Unit
++ ! (message: Any): Unit
++ select(): Unit
++ selectAndIntersecting(): Unit
++ intersecting(): Unit
++ setDefaultAttributes(): Unit
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>90</y>
+      <w>220</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;210.0;200.0;210.0</additional_attributes>
   </element>
 </diagram>
