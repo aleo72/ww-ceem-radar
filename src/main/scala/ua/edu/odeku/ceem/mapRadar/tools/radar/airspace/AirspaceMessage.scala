@@ -10,8 +10,8 @@ package ua.edu.odeku.ceem.mapRadar.tools.radar.airspace
  */
 object AirspaceMessage {
 
-  val select = 1
-  val selectAndIntersecting = 2
-  val intersecting = 3
-  val setDefaultAttribute = 4
+  val select: Int = 1
+  val selectAndIntersecting: Int = 2
+  val intersecting: Int = 3
+  val setDefaultAttribute: Int = 4
 }
