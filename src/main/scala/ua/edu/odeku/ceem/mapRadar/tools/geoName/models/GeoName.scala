@@ -357,23 +357,3 @@ object GeoNamesWithNameAndCoordinates {
     list.toList
   }
 }
-
-
-object Test extends App {
-  //	DB.database withSession {
-  //		implicit session =>
-  //			GeoNames.objects.ddl.drop
-  //			GeoNames.objects.ddl.create
-  //
-  //	}
-  //	for (i <- 1 to 1000) {
-  //		GeoNames += GeoName(i, "test" + i, i + "test2", i + "test3,test4" + i, 7234.90, 7294.94, "F", "FF", "UA", null)
-  //	}
-
-  //	GeoNames += GeoName(1, "test", "test2", "test3,test4", 7234.90, 7294.94, "F", "FF", "UA", null)
-
-  //	println(GeoNames.list("", "UA", "FF", "FF").mkString(","))
-  //	println(GeoNames.list("st4", "UA", "F", "FF").mkString(","))
-  //
-  //	print(GeoNames.list().mkString(","))
-}

@@ -7,12 +7,7 @@ package ua.edu.odeku.ceem.mapRadar.tools.radar.surface;
 import gov.nasa.worldwind.render.Material;
 import gov.nasa.worldwind.util.Logging;
 
-/**
- * @author dcollins
- * @version $Id: AnalyticSurfaceAttributes.java 1171 2013-02-11 21:45:02Z dcollins $
- */
-public class AnalyticSurfaceAttributes
-{
+public class AnalyticSurfaceAttributes {
     protected boolean drawInterior = true;
     protected boolean drawOutline = false;
     protected boolean drawShadow = true;
@@ -23,10 +18,8 @@ public class AnalyticSurfaceAttributes
     protected double shadowOpacity = 1d;
     protected double outlineWidth = 1d;
 
-    public AnalyticSurfaceAttributes(Material material, double opacity)
-    {
-        if (material == null)
-        {
+    public AnalyticSurfaceAttributes(Material material, double opacity) {
+        if (material == null) {
             String message = Logging.getMessage("nullValue.MaterialIsNull");
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);
@@ -36,15 +29,12 @@ public class AnalyticSurfaceAttributes
         this.interiorOpacity = opacity;
     }
 
-    public AnalyticSurfaceAttributes()
-    {
+    public AnalyticSurfaceAttributes() {
         this(Material.GRAY, 1d);
     }
 
-    public AnalyticSurfaceAttributes(AnalyticSurfaceAttributes attributes)
-    {
-        if (attributes == null)
-        {
+    public AnalyticSurfaceAttributes(AnalyticSurfaceAttributes attributes) {
+        if (attributes == null) {
             String message = Logging.getMessage("nullValue.AttributesIsNull");
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);
@@ -61,50 +51,40 @@ public class AnalyticSurfaceAttributes
         this.outlineWidth = attributes.getOutlineWidth();
     }
 
-    public AnalyticSurfaceAttributes copy()
-    {
+    public AnalyticSurfaceAttributes copy() {
         return new AnalyticSurfaceAttributes(this);
     }
 
-    public boolean isDrawInterior()
-    {
+    public boolean isDrawInterior() {
         return this.drawInterior;
     }
 
-    public void setDrawInterior(boolean draw)
-    {
+    public void setDrawInterior(boolean draw) {
         this.drawInterior = draw;
     }
 
-    public boolean isDrawOutline()
-    {
+    public boolean isDrawOutline() {
         return this.drawOutline;
     }
 
-    public void setDrawOutline(boolean draw)
-    {
+    public void setDrawOutline(boolean draw) {
         this.drawOutline = draw;
     }
 
-    public boolean isDrawShadow()
-    {
+    public boolean isDrawShadow() {
         return this.drawShadow;
     }
 
-    public void setDrawShadow(boolean draw)
-    {
+    public void setDrawShadow(boolean draw) {
         this.drawShadow = draw;
     }
 
-    public Material getInteriorMaterial()
-    {
+    public Material getInteriorMaterial() {
         return this.interiorMaterial;
     }
 
-    public void setInteriorMaterial(Material material)
-    {
-        if (material == null)
-        {
+    public void setInteriorMaterial(Material material) {
+        if (material == null) {
             String message = Logging.getMessage("nullValue.MaterialIsNull");
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);
@@ -113,15 +93,12 @@ public class AnalyticSurfaceAttributes
         this.interiorMaterial = material;
     }
 
-    public Material getOutlineMaterial()
-    {
+    public Material getOutlineMaterial() {
         return this.outlineMaterial;
     }
 
-    public void setOutlineMaterial(Material material)
-    {
-        if (material == null)
-        {
+    public void setOutlineMaterial(Material material) {
+        if (material == null) {
             String message = Logging.getMessage("nullValue.MaterialIsNull");
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);
@@ -130,15 +107,12 @@ public class AnalyticSurfaceAttributes
         this.outlineMaterial = material;
     }
 
-    public double getInteriorOpacity()
-    {
+    public double getInteriorOpacity() {
         return this.interiorOpacity;
     }
 
-    public void setInteriorOpacity(double opacity)
-    {
-        if (opacity < 0 || opacity > 1)
-        {
+    public void setInteriorOpacity(double opacity) {
+        if (opacity < 0 || opacity > 1) {
             String message = Logging.getMessage("generic.OpacityOutOfRange", opacity);
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);
@@ -147,15 +121,12 @@ public class AnalyticSurfaceAttributes
         this.interiorOpacity = opacity;
     }
 
-    public double getOutlineOpacity()
-    {
+    public double getOutlineOpacity() {
         return this.outlineOpacity;
     }
 
-    public void setOutlineOpacity(double opacity)
-    {
-        if (opacity < 0 || opacity > 1)
-        {
+    public void setOutlineOpacity(double opacity) {
+        if (opacity < 0 || opacity > 1) {
             String message = Logging.getMessage("generic.OpacityOutOfRange", opacity);
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);
@@ -164,15 +135,12 @@ public class AnalyticSurfaceAttributes
         this.outlineOpacity = opacity;
     }
 
-    public double getShadowOpacity()
-    {
+    public double getShadowOpacity() {
         return this.shadowOpacity;
     }
 
-    public void setShadowOpacity(double opacity)
-    {
-        if (opacity < 0 || opacity > 1)
-        {
+    public void setShadowOpacity(double opacity) {
+        if (opacity < 0 || opacity > 1) {
             String message = Logging.getMessage("generic.OpacityOutOfRange", opacity);
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);
@@ -181,15 +149,12 @@ public class AnalyticSurfaceAttributes
         this.shadowOpacity = opacity;
     }
 
-    public double getOutlineWidth()
-    {
+    public double getOutlineWidth() {
         return this.outlineWidth;
     }
 
-    public void setOutlineWidth(double width)
-    {
-        if (width < 0)
-        {
+    public void setOutlineWidth(double width) {
+        if (width < 0) {
             String message = Logging.getMessage("Geom.LineWidthInvalid", width);
             Logging.logger().severe(message);
             throw new IllegalArgumentException(message);

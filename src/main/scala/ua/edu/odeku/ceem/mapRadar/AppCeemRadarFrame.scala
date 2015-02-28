@@ -139,7 +139,7 @@ protected class AppMainPanel(canvasSize: Dimension, includeStatusBar: Boolean) e
 
 private object DefaultValue {
 
-  val dimension = new Dimension(800, 600)
+  val dimension = new Dimension(1280, 720)
   val stringBundle = "bundles/strings"
   val createStaticPanel = true
 }

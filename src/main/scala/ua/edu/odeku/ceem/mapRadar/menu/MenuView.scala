@@ -72,17 +72,17 @@ object MenuView extends MenuCreator {
 		})
 		buff += item
 
-//		layer = GeoNameLayerFactory.createLayer(null, GeoNamesFeatureClasses.P, GeoNamesFeatureClasses.P.featureCodes.toList, Font.decode("Arial-BOLD-12"), Color.WHITE, 0.0, GeoNameLayer.LEVEL_I)
-//		item = new JCheckBoxMenuItem("GeoName P", false)
-//		layer.setEnabled(false)
-//		AppCeemRadarFrame.wwd.getModel.getLayers.add(layer)
-//		item.addActionListener(new ActionListener {
-//			def actionPerformed(e: ActionEvent) {
-//				val item: JCheckBoxMenuItem = e.getSource.asInstanceOf[JCheckBoxMenuItem]
-//				layer.setEnabled(item.isSelected)
-//			}
-//		})
-//		buff += item
+		layer = GeoNameLayerFactory.createLayer(null, GeoNamesFeatureClasses.P, GeoNamesFeatureClasses.P.featureCodes.toList, Font.decode("Arial-BOLD-12"), Color.WHITE, 0.0, GeoNameLayer.LEVEL_I)
+		item = new JCheckBoxMenuItem("GeoName P", false)
+		layer.setEnabled(false)
+		AppCeemRadarFrame.wwd.getModel.getLayers.add(layer)
+		item.addActionListener(new ActionListener {
+			def actionPerformed(e: ActionEvent) {
+				val item: JCheckBoxMenuItem = e.getSource.asInstanceOf[JCheckBoxMenuItem]
+				layer.setEnabled(item.isSelected)
+			}
+		})
+		buff += item
 
 
 		item = new JCheckBoxMenuItem("Admin Border Country", false)
